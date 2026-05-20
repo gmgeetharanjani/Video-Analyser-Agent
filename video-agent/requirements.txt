@@ -1,0 +1,28 @@
+# AI and Agent Framework
+litellm==1.80.13
+rich
+pydantic-ai-slim
+pydantic-ai-litellm
+a2a-sdk[all]
+
+# Web Server
+uvicorn
+httpx
+fastapi
+python-multipart
+
+# Video Processing
+opencv-python-headless==4.10.0.84
+moviepy==1.0.3
+ffmpeg-python==0.2.0
+pillow==10.4.0
+
+# Audio Processing
+pydub==0.25.1
+SpeechRecognition==3.10.4
+openai-whisper
+
+# Utilities
+python-dotenv
+click
+aiofiles

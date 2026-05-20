@@ -1,0 +1,28 @@
+apiVersion: workload.appfnd.sap/v1
+kind: Agent
+metadata:
+  name: video-analyzer-agent
+  namespace: video-analyzer
+spec:
+  container:
+    buildPath: .
+    port: 5000
+  resources:
+    requests:
+      memory: "1Gi"
+      cpu: "500m"
+    limits:
+      memory: "4Gi"
+      cpu: "2000m"
+  service:
+    apiAuth:
+      path: /*
+      type: jwt
+  models:
+  - executableId: aws-bedrock
+    name: anthropic--claude-4.5-sonnet
+    version: latest
+  volumes:
+  - name: video-storage
+    size: 10Gi
+    mountPath: /app/videos
